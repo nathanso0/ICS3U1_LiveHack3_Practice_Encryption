@@ -12,15 +12,17 @@ class Encryption extends ConsoleProgram {
     strmessagea = readLine("Enter the message to encrypt: ");
     intshifta = readInt("Enter the shift amount: ");
     System.out.println((encryptedMessage(strmessagea, intshifta)));
+
+    
     }
 
   public String encryptedMessage(String strMessage, int intShift) {
-    String strMessageCoded = "";
-
-    for (int intCounter = 0; intCounter > strMessage.length(); intCounter ++) {
-      strMessage.charAt(intCounter);
+    String randomstring = "";
+    for (int intCounter = 0; intCounter < strMessage.length(); intCounter ++) {
+      randomstring = randomstring + (char)(' ' + ((strMessage.charAt(intCounter) - ' ' + intShift) % 95));
     }
-    return strMessageCoded;
+
+    return randomstring;
 }
 
   }
